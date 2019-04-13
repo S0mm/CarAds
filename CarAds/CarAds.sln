@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarAds.Api", "CarAds.Api\CarAds.Api.csproj", "{65B8D7B1-0F7E-4ACF-8E77-C27ADC2CC8C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarAds.Services", "CarAds.Services\CarAds.Services.csproj", "{D3D33050-AF6C-4862-973F-8FE1184FC65D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarAds.Data", "CarAds.Data\CarAds.Data.csproj", "{9BDCB323-8D33-493D-93EB-03D2CA1BEA9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarAds.DB", "CarAds.DB\CarAds.DB.csproj", "{19DBE3F5-2F57-4572-A080-534EBFDDA087}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65B8D7B1-0F7E-4ACF-8E77-C27ADC2CC8C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B8D7B1-0F7E-4ACF-8E77-C27ADC2CC8C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B8D7B1-0F7E-4ACF-8E77-C27ADC2CC8C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B8D7B1-0F7E-4ACF-8E77-C27ADC2CC8C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3D33050-AF6C-4862-973F-8FE1184FC65D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3D33050-AF6C-4862-973F-8FE1184FC65D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3D33050-AF6C-4862-973F-8FE1184FC65D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3D33050-AF6C-4862-973F-8FE1184FC65D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BDCB323-8D33-493D-93EB-03D2CA1BEA9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BDCB323-8D33-493D-93EB-03D2CA1BEA9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BDCB323-8D33-493D-93EB-03D2CA1BEA9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BDCB323-8D33-493D-93EB-03D2CA1BEA9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19DBE3F5-2F57-4572-A080-534EBFDDA087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19DBE3F5-2F57-4572-A080-534EBFDDA087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19DBE3F5-2F57-4572-A080-534EBFDDA087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19DBE3F5-2F57-4572-A080-534EBFDDA087}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
