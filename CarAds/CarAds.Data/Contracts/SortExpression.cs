@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Linq.Expressions;
 
-namespace CarAds.Data.Repositories
+namespace CarAds.Data.Contracts
 {
     public class SortExpression<TEntity> where TEntity : class
     {
