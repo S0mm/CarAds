@@ -9,6 +9,7 @@ namespace CarAds.Data.Configurations
         public void Configure(EntityTypeBuilder<UserEntity> builder)
         {
             builder.ToTable("User");
+            builder.HasKey(p => p.Id);
             builder.Property(p => p.FirstName).IsRequired().HasMaxLength(50);
             builder.Property(p => p.SecondName).HasMaxLength(50);
             builder.Property(p => p.Email).IsRequired().HasMaxLength(80);

@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CarAds.Data.Configurations
 {
-    public class FuelTypeConfiguration : IEntityTypeConfiguration<FuelTypeEntity>
+    public class CarBrandModelConfiguration : IEntityTypeConfiguration<CarBrandModelEntity>
     {
-        public void Configure(EntityTypeBuilder<FuelTypeEntity> builder)
+        public void Configure(EntityTypeBuilder<CarBrandModelEntity> builder)
         {
-            builder.ToTable("FuelType");
+            builder.ToTable("CarBrandModel");
             builder.HasKey(p => p.Id);
             builder.Property(p => p.Name).IsRequired().HasMaxLength(50);
         }

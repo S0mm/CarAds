@@ -9,6 +9,7 @@ namespace CarAds.Data.Configurations
         public void Configure(EntityTypeBuilder<CarEntity> builder)
         {
             builder.ToTable("Car");
+            builder.HasKey(p => p.Id);
             builder.Property(p => p.Title).IsRequired().HasMaxLength(100);
             builder.Property(p => p.Description).HasMaxLength(2000);
             builder.Property(p => p.Color).HasMaxLength(30);

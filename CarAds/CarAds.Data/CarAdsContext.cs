@@ -1,4 +1,5 @@
 using CarAds.Data.Configurations;
+using CarAds.Data.DataSeed;
 using CarAds.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,6 +18,10 @@ namespace CarAds.Data
             modelBuilder.ApplyConfiguration(new ConditionTypeConfiguration());
             modelBuilder.ApplyConfiguration(new FuelTypeConfiguration());
             modelBuilder.ApplyConfiguration(new GearBoxTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new CarBrandConfiguration());
+            modelBuilder.ApplyConfiguration(new CarBrandModelConfiguration());
+
+            modelBuilder.Seed();
         }
         
         public DbSet<UserEntity> Users { get; set; }
@@ -24,5 +29,7 @@ namespace CarAds.Data
         public DbSet<ConditionTypeEntity> ConditionTypes { get; set; }
         public DbSet<FuelTypeEntity> FuelTypes { get; set; }
         public DbSet<GearBoxTypeEntity> GearBoxTypes { get; set; }
+        public DbSet<CarBrandEntity> CarBrands { get; set; }
+        public DbSet<CarBrandModelEntity> CarBrandModels { get; set; }
     }
 }
