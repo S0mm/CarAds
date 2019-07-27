@@ -7,7 +7,7 @@ namespace CarAds.Data
 {
     public class CarAdsContext : DbContext
     {
-        public CarAdsContext(DbContextOptions<CarAdsContext> options) : base(options)
+        public CarAdsContext(DbContextOptions options) : base(options)
         {
         }
         
