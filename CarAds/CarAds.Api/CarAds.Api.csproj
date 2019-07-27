@@ -14,4 +14,8 @@
       <Folder Include="Extensions" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CarAds.Data\CarAds.Data.csproj" />
+    </ItemGroup>
+
 </Project>
