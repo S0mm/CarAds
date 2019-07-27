@@ -1,13 +1,12 @@
 using CarAds.Data.Configurations;
-using CarAds.Data.DataSeed;
 using CarAds.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace CarAds.Data
 {
-    public class CarAdsContext : DbContext
+    public class CarAdsDbContext : DbContext
     {
-        public CarAdsContext(DbContextOptions options) : base(options)
+        public CarAdsDbContext(DbContextOptions options) : base(options)
         {
         }
         
@@ -20,8 +19,6 @@ namespace CarAds.Data
             modelBuilder.ApplyConfiguration(new GearBoxTypeConfiguration());
             modelBuilder.ApplyConfiguration(new CarBrandConfiguration());
             modelBuilder.ApplyConfiguration(new CarBrandModelConfiguration());
-
-            modelBuilder.Seed();
         }
         
         public DbSet<UserEntity> Users { get; set; }

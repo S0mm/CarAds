@@ -19,7 +19,7 @@ namespace CarAds.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<CarAdsContext>(options =>
+            services.AddDbContext<CarAdsDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("CarAds")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

@@ -1,7 +1,7 @@
 ﻿using CarAds.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace CarAds.Data.DataSeed
+namespace CarAds.DB.DataSeed
 {
     public static class ModelBuilderExtensions
     {
