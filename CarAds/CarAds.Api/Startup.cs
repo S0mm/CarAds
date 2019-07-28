@@ -1,4 +1,6 @@
 ﻿using CarAds.Data;
+using CarAds.Services;
+using CarAds.Services.Contracts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -21,6 +23,8 @@ namespace CarAds.Api
         {
             services.AddDbContext<CarAdsDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("CarAds")));
+
+            services.AddScoped<ICarService, CarService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
