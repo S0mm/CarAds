@@ -14,14 +14,12 @@ namespace CarAds.Data.Entities
         public int ConditionTypeId { get; set; }
         public int FuelTypeId { get; set; }
         public int GearBoxTypeId { get; set; }
-        public int CarBrandId { get; set; }
         public int CarBrandModelId { get; set; }
 
         public virtual UserEntity User { get; set; }
         public virtual ConditionTypeEntity ConditionType { get; set; }
         public virtual FuelTypeEntity FuelType { get; set; }
         public virtual GearBoxTypeEntity GearBoxType { get; set; }
-        public virtual CarBrandEntity CarBrand { get; set; }
         public virtual CarBrandModelEntity CarBrandModel { get; set; }
     }
 }

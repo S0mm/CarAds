@@ -24,7 +24,7 @@ namespace CarAds.Api.Controllers
         }
 
         [HttpGet]
-        [Route("{carId}")]
+        [Route("{Id}")]
         public async Task<CarViewModel> GetById(int id)
         {
             var car = await _carService.GetByIdAsync(id);

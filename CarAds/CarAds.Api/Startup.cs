@@ -2,6 +2,8 @@
 using CarAds.Api.Extensions.AutoMapper;
 using CarAds.Api.MappingProfiles;
 using CarAds.Data;
+using CarAds.Data.Contracts;
+using CarAds.Data.UnitOfWork;
 using CarAds.Services;
 using CarAds.Services.Contracts;
 using Microsoft.AspNetCore.Builder;
@@ -28,6 +30,7 @@ namespace CarAds.Api
                 options.UseSqlServer(Configuration.GetConnectionString("CarAds")));
 
             services.AddScoped<ICarService, CarService>();
+            services.AddScoped<IUnitOfWork, CarAdsUnitOfWork>();
             
             services.AddMapper();
 
