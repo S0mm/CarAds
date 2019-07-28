@@ -1,4 +1,4 @@
-﻿namespace CarAds.Api.ViewModels
+﻿namespace CarAds.Api.Models.ViewModels
 {
     public class CarViewModel
     {

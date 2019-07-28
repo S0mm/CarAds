@@ -1,4 +1,4 @@
-﻿namespace CarAds.Api.ActionModels
+﻿namespace CarAds.Api.Models.ActionModels
 {
     public class CarActionModel
     {

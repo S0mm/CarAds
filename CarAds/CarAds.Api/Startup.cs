@@ -1,4 +1,7 @@
-﻿using CarAds.Data;
+﻿using AutoMapper;
+using CarAds.Api.Extensions.AutoMapper;
+using CarAds.Api.MappingProfiles;
+using CarAds.Data;
 using CarAds.Services;
 using CarAds.Services.Contracts;
 using Microsoft.AspNetCore.Builder;
@@ -25,6 +28,8 @@ namespace CarAds.Api
                 options.UseSqlServer(Configuration.GetConnectionString("CarAds")));
 
             services.AddScoped<ICarService, CarService>();
+            
+            services.AddMapper();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
