@@ -26,8 +26,10 @@ namespace CarAds.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<CarAdsDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("CarAds")));
+            services.AddDbContext<CarAdsDbContext>(options
+                => options
+                    .UseLazyLoadingProxies()
+                    .UseSqlServer(Configuration.GetConnectionString("CarAds")));
 
             services.AddScoped<ICarService, CarService>();
             services.AddScoped<IUnitOfWork, CarAdsUnitOfWork>();

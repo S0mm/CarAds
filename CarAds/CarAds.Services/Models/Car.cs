@@ -13,7 +13,6 @@
         public ConditionType ConditionType { get; set; }
         public FuelType FuelType { get; set; }
         public GearBoxType GearBoxType { get; set; }
-        public Brand Brand { get; set; }
         public BrandModel BrandModel { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CarAds.Api.MappingProfiles;
+using CarAds.Services.MappingProfiles;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CarAds.Api.Extensions.AutoMapper
@@ -11,6 +12,7 @@ namespace CarAds.Api.Extensions.AutoMapper
             var mappingConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new MappingProfile());
+                mc.AddProfile(new ServicesMappingProfile());
             });
 
             var mapper = mappingConfig.CreateMapper();

@@ -13,6 +13,8 @@ namespace CarAds.DB
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            // seed data
             modelBuilder.Seed();
         }
     }
