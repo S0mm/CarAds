@@ -30,7 +30,8 @@ namespace CarAds.Data.Repositories
 
         public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            return await GetAsync();
+            return await GetAsync()
+                .ConfigureAwait(false);
         }
         
         public virtual IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter)
@@ -40,7 +41,8 @@ namespace CarAds.Data.Repositories
         
         public virtual async Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter)
         {
-            return await GetAsync(filter, null, null, null);
+            return await GetAsync(filter, null, null, null)
+                .ConfigureAwait(false);
         }
         
         public virtual IEnumerable<TEntity> Get(
@@ -60,7 +62,8 @@ namespace CarAds.Data.Repositories
             params SortExpression<TEntity>[] sortExpressions)
         {
             var query = GetQuery(filter, page, pageSize, sortExpressions);
-            return await query.ToListAsync();
+            return await query.ToListAsync()
+                .ConfigureAwait(false);
         }
         
         public virtual TEntity GetById(object id)
@@ -70,7 +73,8 @@ namespace CarAds.Data.Repositories
 
         public virtual async Task<TEntity> GetByIdAsync(object id)
         {
-            return await DbSet.FindAsync(id);
+            return await DbSet.FindAsync(id)
+                .ConfigureAwait(false);
         }
         
         public virtual void Add(TEntity entity)

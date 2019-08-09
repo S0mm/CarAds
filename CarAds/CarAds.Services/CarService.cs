@@ -21,7 +21,10 @@ namespace CarAds.Services
 
         public async Task<Car> GetByIdAsync(int id)
         {
-            var carEntity = await _unitOfWork.GetRepository<CarEntity>().GetByIdAsync(id);
+            var carEntity = await _unitOfWork.GetRepository<CarEntity>()
+                .GetByIdAsync(id)
+                .ConfigureAwait(false);
+
             var car = _mapper.Map<Car>(carEntity);
 
             return car;
@@ -30,7 +33,8 @@ namespace CarAds.Services
         public async Task<IEnumerable<Car>> GetByBrandAsync(int id)
         {
             var carEntities = await _unitOfWork.GetRepository<CarEntity>()
-                .GetAsync(car => car.Id == id);
+                .GetAsync(car => car.Id == id)
+                .ConfigureAwait(false);
 
             var cars = _mapper.Map<IEnumerable<Car>>(carEntities);
 
