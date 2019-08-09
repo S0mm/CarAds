@@ -41,8 +41,7 @@ namespace CarAds.Data.UnitOfWork
 
         public async Task SaveChangesAsync()
         {
-            await _context.SaveChangesAsync()
-                .ConfigureAwait(false);
+            await _context.SaveChangesAsync();
         }
     }
 }
