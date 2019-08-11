@@ -5,15 +5,25 @@ using CarAds.Services.Models;
 
 namespace CarAds.Api.MappingProfiles
 {
-    public class MappingProfile : Profile
+    public class ApiMappingProfile : Profile
     {
-        public MappingProfile()
+        public ApiMappingProfile()
         {
-            //// ViewModels
-            //CreateMap<Car, CarViewModel>().ReverseMap();
+            // ViewModels
+            CreateMap<Car, CarViewModel>()
+                .ForMember(dest => dest.ModelId,
+                    opts => opts.MapFrom(src => src.BrandModel.Id))
+                .ForMember(dest => dest.BrandId,
+                    opts => opts.MapFrom(src => src.BrandModel.Brand.Id))
+                .ReverseMap();
 
-            //// ActionModels
-            //CreateMap<Car, CarActionModel>().ReverseMap();
+            // ActionModels
+            CreateMap<Car, CarActionModel>()
+                .ForMember(dest => dest.ModelId,
+                    opts => opts.MapFrom(src => src.BrandModel.Id))
+                .ForMember(dest => dest.BrandId,
+                    opts => opts.MapFrom(src => src.BrandModel.Brand.Id))
+                .ReverseMap();
         }
     }
 }

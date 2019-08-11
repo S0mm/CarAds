@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using CarAds.Data.Contracts;
@@ -30,16 +31,21 @@ namespace CarAds.Services
         public async Task<IEnumerable<Car>> GetByBrandAsync(int id)
         {
             var carEntities = await _unitOfWork.GetRepository<CarEntity>()
-                .GetAsync(car => car.Id == id);
+                .GetAsync(car => car.CarBrandModel.CarBrandId == id);
 
             var cars = _mapper.Map<IEnumerable<Car>>(carEntities);
 
             return cars;
         }
 
-        public Task<IEnumerable<Car>> GetByBrandModelAsync(int id)
+        public async Task<IEnumerable<Car>> GetByBrandModelAsync(int id)
         {
-            throw new System.NotImplementedException();
+            var carEntities = await _unitOfWork.GetRepository<CarEntity>()
+                .GetAsync(car => car.CarBrandModelId == id);
+
+            var cars = _mapper.Map<IEnumerable<Car>>(carEntities);
+
+            return cars;
         }
 
         public Task<int> CreateAsync(Car car)

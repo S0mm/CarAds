@@ -55,7 +55,7 @@ namespace CarAds.Api.Controllers
         public async Task Create(CarActionModel model)
         {
             var car = _mapper.Map<Car>(model);
-            var carId = await _carService.CreateAsync(car);
+            await _carService.CreateAsync(car);
         }
 
         [HttpPut]

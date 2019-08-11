@@ -11,7 +11,7 @@ namespace CarAds.Api.Extensions.AutoMapper
         {
             var mappingConfig = new MapperConfiguration(mc =>
             {
-                mc.AddProfile(new MappingProfile());
+                mc.AddProfile(new ApiMappingProfile());
                 mc.AddProfile(new ServicesMappingProfile());
             });
 

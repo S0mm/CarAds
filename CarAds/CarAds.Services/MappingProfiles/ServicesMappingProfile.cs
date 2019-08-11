@@ -8,10 +8,9 @@ namespace CarAds.Services.MappingProfiles
     {
         public ServicesMappingProfile()
         {
-            CreateMap<Car, CarEntity>()
-                .ForMember(dest => dest.CarBrandModel,
-                    opts => opts.MapFrom(src => src.BrandModel))
-                .ReverseMap();
+            CreateMap<CarEntity, Car>()
+                .ForMember(dest => dest.BrandModel,
+                    opts => opts.MapFrom(src => src.CarBrandModel));
 
             CreateMap<Brand, CarBrandEntity>().ReverseMap();
 
