@@ -32,8 +32,7 @@ namespace CarAds.Api.Controllers
             return model;
         }
 
-        [HttpGet]
-        [Route("brand/{brandId}")]
+        [HttpGet("brand/{brandId}")]
         public async Task<IEnumerable<CarViewModel>> GetByBrand(int brandId)
         {
             var cars = await _carService.GetByBrandAsync(brandId);
@@ -41,8 +40,7 @@ namespace CarAds.Api.Controllers
             return model;
         }
 
-        [HttpGet]
-        [Route("model/{modelId}")]
+        [HttpGet("model/{modelId}")]
         public async Task<IEnumerable<CarViewModel>> GetByModel(int modelId)
         {
             var cars = await _carService.GetByBrandModelAsync(modelId);
@@ -50,27 +48,54 @@ namespace CarAds.Api.Controllers
             return model;
         }
 
-        [HttpPost]
-        [Route("")]
-        public async Task Create(CarActionModel model)
+        [HttpPost("")]
+        public async Task<IActionResult> Create(CarActionModel model)
         {
             var car = _mapper.Map<Car>(model);
-            await _carService.CreateAsync(car);
+            var id = await _carService.CreateAsync(car);
+
+            return CreatedAtAction(nameof(GetById), new { id }, null);
         }
 
-        [HttpPut]
-        [Route("")]
-        public async Task Edit(CarActionModel model)
+        [HttpPut("")]
+        public async Task<IActionResult> Edit(CarActionModel model)
         {
+            if (!model.Id.HasValue)
+            {
+                return BadRequest("Car Id is undefined.");
+            }
+
+            var carExists = await _carService.CarExistsAsync(model.Id.Value);
+
+            if (!carExists)
+            {
+                return NotFound();
+            }
+
             var car = _mapper.Map<Car>(model);
             await _carService.UpdateAsync(car);
+
+            return NoContent();
         }
 
-        [HttpDelete]
-        [Route("")]
-        public async Task Delete(int id)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
+            if (id == 0)
+            {
+                return BadRequest("Car Id is undefined.");
+            }
+
+            var carExists = await _carService.CarExistsAsync(id);
+
+            if (!carExists)
+            {
+                return NoContent();
+            }
+            
             await _carService.DeleteAsync(id);
+
+            return NoContent();
         }
     }
 }

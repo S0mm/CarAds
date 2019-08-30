@@ -1,20 +1,44 @@
-﻿namespace CarAds.Api.Models.ActionModels
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CarAds.Api.Models.ActionModels
 {
     public class CarActionModel
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public int YearOfManufacture { get; set; }
-        public string Color { get; set; }
-        public int Mileage { get; set; }
-        public decimal Price { get; set; }
+        public int? Id { get; set; }
 
-        public int UserId { get; set; }
-        public int ConditionTypeId { get; set; }
-        public int FuelTypeId { get; set; }
-        public int GearBoxTypeId { get; set; }
-        public int BrandId { get; set; }
-        public int ModelId { get; set; }
+        [Required]
+        public string Title { get; set; }
+
+        public string Description { get; set; }
+
+        [Required]
+        public int? YearOfManufacture { get; set; }
+
+        [Required]
+        public string Color { get; set; }
+
+        [Required]
+        public int? Mileage { get; set; }
+
+        [Required]
+        public decimal? Price { get; set; }
+
+        [Required]
+        public int? UserId { get; set; }
+
+        [Required]
+        public int? ConditionTypeId { get; set; }
+
+        [Required]
+        public int? FuelTypeId { get; set; }
+
+        [Required]
+        public int? GearBoxTypeId { get; set; }
+
+        [Required]
+        public int? BrandId { get; set; }
+
+        [Required]
+        public int? ModelId { get; set; }
     }
 }

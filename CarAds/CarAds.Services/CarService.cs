@@ -48,19 +48,38 @@ namespace CarAds.Services
             return cars;
         }
 
-        public Task<int> CreateAsync(Car car)
+        public async Task<int> CreateAsync(Car car)
         {
-            throw new System.NotImplementedException();
+            var carEntity = _mapper.Map<CarEntity>(car);
+
+            _unitOfWork.GetRepository<CarEntity>().Add(carEntity);
+
+            await _unitOfWork.SaveChangesAsync();
+
+            return carEntity.Id;
         }
 
-        public Task UpdateAsync(Car car)
+        public async Task UpdateAsync(Car car)
         {
-            throw new System.NotImplementedException();
+            var carEntity = _mapper.Map<CarEntity>(car);
+
+            _unitOfWork.GetRepository<CarEntity>().Update(carEntity);
+
+            await _unitOfWork.SaveChangesAsync();
         }
 
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new System.NotImplementedException();
+            _unitOfWork.GetRepository<CarEntity>().Delete(id);
+
+            await _unitOfWork.SaveChangesAsync();
+        }
+
+        public async Task<bool> CarExistsAsync(int id)
+        {
+            var carEntity = await _unitOfWork.GetRepository<CarEntity>().GetByIdAsync(id);
+
+            return carEntity != null;
         }
     }
 }

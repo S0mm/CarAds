@@ -12,5 +12,6 @@ namespace CarAds.Services.Contracts
         Task<int> CreateAsync(Car car);
         Task UpdateAsync(Car car);
         Task DeleteAsync(int id);
+        Task<bool> CarExistsAsync(int id);
     }
 }
